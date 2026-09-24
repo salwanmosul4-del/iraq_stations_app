@@ -26,22 +26,12 @@ jobs:
         run: |
           find . -name gradlew -exec chmod +x {} \;
 
-      - name: Disable AGP 9 New DSL
-        run: |
-          find . -name gradle.properties -exec sh -c 'echo "android.newDsl=false" >> "$1"' _ {} \;
-
       - name: Get dependencies
         run: |
           cd iraq_stations_app
           flutter pub get
 
-      - name: Build APK
+      - name: Build APK with detailed logs
         run: |
           cd iraq_stations_app
-          flutter build apk --release --no-tree-shake-icons
-
-      - name: Upload APK
-        uses: actions/upload-artifact@v4
-        with:
-          name: app-release
-          path: '**/build/app/outputs/flutter-apk/app-release.apk'
+          flutter build apk --release --verbose --no-tree-shake-icons
