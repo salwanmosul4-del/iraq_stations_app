@@ -28,10 +28,10 @@ jobs:
 
       - name: Get dependencies
         run: |
-          cd iraq_stations_app
+          cd iraq_stations_app/iraq_stations_app
           flutter pub get
 
       - name: Build APK with detailed logs
         run: |
-          cd iraq_stations_app
+          cd iraq_stations_app/iraq_stations_app
           flutter build apk --release --verbose --no-tree-shake-icons
