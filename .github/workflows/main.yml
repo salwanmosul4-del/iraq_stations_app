@@ -27,6 +27,10 @@ jobs:
           cd iraq_stations_app/android
           chmod +x gradlew || true
 
+      - name: Configure Gradle properties
+        run: |
+          echo "android.newDsl=false" >> iraq_stations_app/android/gradle.properties
+
       - name: Get dependencies
         run: |
           cd iraq_stations_app
