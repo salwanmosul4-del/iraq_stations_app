@@ -20,16 +20,16 @@ jobs:
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
+          flutter-version: '3.19.6'
           channel: 'stable'
 
       - name: Grant execute permission for gradlew
         run: |
-          cd iraq_stations_app/android
-          chmod +x gradlew || true
+          find . -name gradlew -exec chmod +x {} \;
 
-      - name: Configure Gradle properties
+      - name: Disable AGP 9 New DSL
         run: |
-          echo "android.newDsl=false" >> iraq_stations_app/android/gradle.properties
+          find . -name gradle.properties -exec sh -c 'echo "android.newDsl=false" >> "$1"' _ {} \;
 
       - name: Get dependencies
         run: |
@@ -45,4 +45,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: app-release
-          path: iraq_stations_app/build/app/outputs/flutter-apk/app-release.apk
+          path: '**/build/app/outputs/flutter-apk/app-release.apk'
