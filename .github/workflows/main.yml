@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up Java
-        uses: actions/setup-java@v5
+        uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: '17'
@@ -23,21 +23,16 @@ jobs:
           channel: 'stable'
 
       - name: Grant execute permission for gradlew
-        run: |
-          find . -name gradlew -exec chmod +x {} \;
+        run: chmod +x android/gradlew
 
-      - name: Install dependencies
-        run: |
-          cd iraq_stations_app
-          flutter pub get
+      - name: Get dependencies
+        run: flutter pub get
 
       - name: Build APK
-        run: |
-          cd iraq_stations_app
-          flutter build apk --release --no-tree-shake-icons
+        run: flutter build apk --release --no-tree-shake-icons
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: app-release
-          path: iraq_stations_app/build/app/outputs/flutter-apk/app-release.apk
+          path: build/app/outputs/flutter-apk/app-release.apk
