@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "747070363736",
+    "project_id": "my-app-b4e7e",
+    "storage_bucket": "my-app-b4e7e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:747070363736:android:f3255b7d420ad5b3f6522d",
+        "android_client_info": {
+          "package_name": "com.mosul_gas"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAb1JFU7C04G4QetNnbtj7Jn5q5b6dllyo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
