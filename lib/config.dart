@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 
 /// اسم التطبيق الظاهر داخل الواجهة. غيّره هنا (وفي AndroidManifest.xml) إذا أردت اسماً آخر.
-const String kAppName = 'محطات العراق';
+const String kAppName = 'بانزين العراق';
 
 // ---------------- AdMob ----------------
 const String kBannerAdUnitId = 'ca-app-pub-7520136213524222/5888302175';

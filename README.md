@@ -66,5 +66,8 @@ flutter build apk --release
   (أو `android/key.properties` محلياً). بدونها يُوقَّع البناء بمفتاح debug ولن يقبله Google Play.
 
 ## لم يُنجز بعد
-- أيقونة التطبيق ما زالت أيقونة Flutter الافتراضية (`android/app/src/main/res/mipmap-*`).
 - الخريطة لا تجمّع العلامات (clustering)؛ تُعرض أقرب 300 محطة للشاشة الحالية.
+
+## أيقونة التطبيق
+الأيقونة (مضخة وقود) في `assets/icon/app_icon.png` و`assets/icon/app_icon_foreground.png`، وتُولَّد كل أحجام Android تلقائياً أثناء البناء عبر `flutter_launcher_icons` (الأمر `dart run flutter_launcher_icons`، مُضاف في workflow البناء).
+لتغييرها: استبدل الملفين بنفس الاسم (1024×1024، `app_icon_foreground.png` بخلفية شفافة) وأعد تشغيل البناء.

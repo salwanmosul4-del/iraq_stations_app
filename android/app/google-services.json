@@ -7,6 +7,25 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:747070363736:android:a49087466ac53637f6522d",
+        "android_client_info": {
+          "package_name": "com.example.iraq_stations_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAb1JFU7C04G4QetNnbtj7Jn5q5b6dllyo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:747070363736:android:f3255b7d420ad5b3f6522d",
         "android_client_info": {
           "package_name": "com.mosul_gas"
