@@ -6,7 +6,7 @@ plugins {
     id("kotlin-android")
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id("dev.flutter.flutter-gradle-plugin")
-    id("com.google.gms.google-services") apply false
+    id("com.google.gms.google-services")
 }
 
 // توقيع نسخة release: يقرأ android/key.properties إن وُجد، وإلا يستخدم مفتاح debug.
@@ -66,7 +66,5 @@ flutter {
     source = "../.."
 }
 
-// يُفعَّل Firebase فقط عند وجود google-services.json
-if (file("google-services.json").exists()) {
-    apply(plugin = "com.google.gms.google-services")
-}
+
+
