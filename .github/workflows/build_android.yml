@@ -19,10 +19,9 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           channel: stable
-          flutter-version: '3.47.5' 
+          flutter-version: '3.47.5'
           cache: true
 
-      # اختياري: احفظ محتوى google-services.json في Secret باسم GOOGLE_SERVICES_JSON
       - name: Write google-services.json (if secret set)
         env:
           GOOGLE_SERVICES_JSON: ${{ secrets.GOOGLE_SERVICES_JSON }}
@@ -31,7 +30,6 @@ jobs:
             printf '%s' "$GOOGLE_SERVICES_JSON" > android/app/google-services.json
           fi
 
-      # اختياري: توقيع بمفتاحك الخاص (مطلوب للنشر/التحديث على Google Play)
       - name: Restore signing key (if secrets set)
         env:
           KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
